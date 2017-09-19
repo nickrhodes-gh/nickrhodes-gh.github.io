@@ -20,9 +20,7 @@ considered fun to do at home! Perfect.
 
 ### Get in touch
 
-Find me on [LinkedIn][linkedin] / [Github][github] or just say `Hello` at
-[nrhodes91@gmail.com](email).
-
+Find me on [LinkedIn][linkedin] / [Github][github].
 
 [rs]: https://www.rackspace.co.uk
 [linkedin]: https://www.linkedin.com/in/nickrhodes1
