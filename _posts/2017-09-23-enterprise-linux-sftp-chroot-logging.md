@@ -34,20 +34,17 @@ The most straight forward configuration involves adding the following to the
 bottom of `/etc/ssh/sshd_config`.
 
 {% highlight bash %}
-# This is a big gotcha as it prevents rsyslog from logging anything
-# from the chroot environment when commented out
-LogLevel INFO
-
 # Set VERBOSE logging for debugging and facility LOCAL3 - change these
-# as necessary
-Subsystem       sftp    internal-sftp   -l VERBOSE -f LOCAL3
+# as necessary.
+Subsystem       sftp    internal-sftp # -l VERBOSE -f LOCAL3 # uncomment for none chroot user logging
 
 # Example of overriding settings on a per-group basis
 Match Group sftponly
         ChrootDirectory /data/%u
         X11Forwarding no
         AllowTcpForwarding no
-        ForceCommand internal-sftp
+# Enable logging for users in the chroot environment
+        ForceCommand internal-sftp -l VERBOSE -f LOCAL3
 {% endhighlight %}
 
 This hands off control of the sftp server to `sshd` as there is no access to
