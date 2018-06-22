@@ -12,14 +12,14 @@ description: >
 
 **Quick note:** this is aimed at rsyslog version 5.8.10.
 
-{% highlight bash %}
+```sh
 [root@centos6 ~]# rpm -qi rsyslog
 Name        : rsyslog                      Relocations: (not relocatable)
 Version     : 5.8.10                            Vendor: CentOS
 Release     : 10.el6_6                      Build Date: Wed 17 Dec 2014
 09:52:43 GMT
 ....
-{% endhighlight %}
+```
 
 Setting up an SFTP server to jail users in a chroot environment will
 considerably improve the security of the server by preventing the user from
@@ -33,7 +33,7 @@ permissions.
 The most straight forward configuration involves adding the following to the
 bottom of `/etc/ssh/sshd_config`.
 
-{% highlight bash %}
+```
 # Set VERBOSE logging for debugging and facility LOCAL3 - change these
 # as necessary.
 Subsystem       sftp    internal-sftp # -l VERBOSE -f LOCAL3 # uncomment for none chroot user logging
@@ -45,7 +45,7 @@ Match Group sftponly
         AllowTcpForwarding no
 # Enable logging for users in the chroot environment
         ForceCommand internal-sftp -l VERBOSE -f LOCAL3
-{% endhighlight %}
+```
 
 This hands off control of the sftp server to `sshd` as there is no access to
 the `sftp-server` binary from within chroot.
@@ -58,22 +58,22 @@ group which will be our ftp_user's primary group.
 Assuming a test user called `ftp_user` - they should be assigned primary group
 `sftponly` and ideally prevented from getting terminal access to the server.
 
-{% highlight bash %}
+```
 $ id ftp_user
 uid=501(ftp_user) gid=502(sftponly) groups=502(sftponly)
 
 $ grep ftp_user /etc/passwd
 ftp_user:x:501:502:::/sbin/nologin
-{% endhighlight %}
+```
 
 The permissions on the `/data` directory are quite specific.
 
-{% highlight bash %}
+```
 drwxr-xr-x. 3 root      root        4096 Sep 21 19:27 /data/
 drwxr-xr-x. 4 root      sftponly    4096 Sep 21 19:51 /data/ftp_user/
 drwxr-xr-x. 2 root      root        4096 Sep 21 20:09 /data/ftp_user/dev/
 drwxr-xr-x. 2 ftp_user  sftponly    4096 Sep 21 20:17 /data/ftp_user/files/
-{% endhighlight %}
+```
 
 The `ftp_user` will log into the `/data/ftp_user` directory. From this
 directory they have full access to the files directory (change the names as
@@ -103,7 +103,7 @@ correctly listening on this socket by running `$ logger -d -u
 /data/ftp_user/dev/log -p local3.info This is a log message`. This will the
 corresponding log message to `/var/log/sftp.log`. Now when connecting into the
 SFTP server as user `ftp_user`, sshd should log all SFTP transactions to the
-`sftp.log`. 
+`sftp.log`.
 
 I haven't managed to get this running yet with SELinux in enforcing mode yet.
 Currently when in enforcing mode users get permission denied when running `ls`

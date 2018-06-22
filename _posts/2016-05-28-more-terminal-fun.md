@@ -38,7 +38,7 @@ It makes quickly gathering useful info quite hard as you're presented with a
 rainbow of text in the commit view. I've set quite a few of the highlight
 groups to the same colour to make things a little less crazy.
 
-{% highlight bash %}
+```
 ##
 # tigrc
 ##
@@ -86,7 +86,7 @@ color   'Commit:'               250     default
 color   'AuthorDate:'           250     default
 color   'CommitDate:'           250     default
 color   'Date:'                 250     default
-{% endhighlight %}
+```
 
 These are all personal preference, however it's definitely easier to parse the
 diff with all the noise cancelled out.

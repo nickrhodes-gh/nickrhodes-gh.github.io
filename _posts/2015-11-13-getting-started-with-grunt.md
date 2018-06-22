@@ -30,7 +30,7 @@ exactly that. To install `grunt-replace` run `npm install grunt-replace
 Configuring grunt-replace is quite straight forward; create a `Gruntfile.js`
 and add the following.
 
-{% highlight js %}
+```
 module.exports = function (grunt) {
 
   grunt.initConfig({
@@ -43,7 +43,7 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-replace');
   grunt.registerTask('default', ['replace']);
 };
-{% endhighlight %}
+```
 
 The grunt configuration must always be contained within `module.exports =
 function (grunt) { //.. } `. The module configuration is then stored within
@@ -59,7 +59,7 @@ defined two tasks, `default` which is for when you simply run `grunt`.
 The specific configuration for the `grunt-replace` tasks is very straight
 forward.
 
-{% highlight js %}
+```
 replace: {
   dist: {
     options: {
@@ -81,7 +81,7 @@ replace: {
     ]
   }
 }
-{% endhighlight %}
+```
 
 Using replacement patterns you can basically perform search and replace within
 the file, and using `<%= grunt.file.read("css/style.css") %>` I've turned my
@@ -92,7 +92,7 @@ writing plain CSS. Which is where the sass pre-processor comes in.
 
 Is a scss/compass compiler run by grunt. The configuration is super simple.
 
-{% highlight js %}
+```
 compass: {
   dist: {
     options: {
@@ -102,7 +102,7 @@ compass: {
     }
   }
 }
-{% endhighlight %}
+```
 
 #### Grunt-watch
 
@@ -110,7 +110,7 @@ Finally, because I'm too lazy to run the above after every change, I'm using
 `grunt-watch` to automatically run `grunt-compass` and `grunt-replace` when a
 watched file changes.
 
-{% highlight js %}
+```
 watch: {
   css: {                      // name of the first watch task
     files: ['_sass/*.scss'],  // watch files
@@ -121,7 +121,7 @@ watch: {
     tasks: ['replace']        // task to run on change
   }
 }
-{% endhighlight %}
+```
 
 The watch configuration will listen for changes in the sass file, when it
 detects a change it will compile it into the css directory. The next watch
@@ -132,7 +132,7 @@ events that are automated by watch.
 Putting all of this together results in a `Gruntfile.js` that resembles the
 following.
 
-{% highlight js %}
+```
 module.exports = function (grunt) {
 
   grunt.initConfig({
@@ -184,4 +184,4 @@ module.exports = function (grunt) {
   grunt.registerTask('default', ['watch']);
   grunt.registerTask('build', ['compass', 'replace']);
 };
-{% endhighlight %}
+```

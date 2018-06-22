@@ -37,7 +37,7 @@ Luckily Tawk.to also provide an API through which you can hook into various
 widget statuses. A very basic (but good enough for my needs) example showing
 how to change additional widget styles.
 
-{% highlight js %}
+```
 Tawk_API = Tawk_API || {};
 Tawk_API.onLoad = function(){
 
@@ -74,7 +74,7 @@ Tawk_API.onLoad = function(){
 };
 
 // widget code...
-{% endhighlight %}
+```
 
 Be careful though, watching visitors move around your site is surprisingly
 addictive!

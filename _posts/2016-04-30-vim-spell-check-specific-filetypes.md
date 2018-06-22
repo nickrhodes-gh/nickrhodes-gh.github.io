@@ -17,21 +17,21 @@ be found [here](http://vimdoc.sourceforge.net/htmldoc/autocmd.html).
 
 The format is actually pretty basic.
 
-{% highlight vim %}
+```
 " event: File event to check (BufNewFile/BufRead/FileType)
 " pattern: Match pattern (*.html/markdown)
 " command: Vim command to be run
 
 au {event} {pattern} {command}
-{% endhighlight %}
+```
 
 To set set spell checking for `markdown` and `gitcommit` file types only, I
 think you can only use the `FileType` option due to gitcommits not having file
 extensions.
 
-{% highlight vim %}
+```
 au FileType markdown,gitcommit setlocal spell spelllang=en_gb
-{% endhighlight %}
+```
 
 `setlocal` is used so that spell checking is only enabled for the opened
 buffer.

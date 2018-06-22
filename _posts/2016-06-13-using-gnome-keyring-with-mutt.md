@@ -29,20 +29,20 @@ Not all `gkeyring` arguments are the same. I was originally using `--id` to
 query the keyring item, however doing it that way would not trigger the
 password prompt when doing it for the first time.
 
-{% highlight sh %}
+```
 gkeyring --id <id> -1
-{% endhighlight %}
+```
 
 Instead I had to use `--name`, which for some reason will always prompt.
 
-{% highlight bash %}
+```
 gkeyring --name <item_name> -1
-{% endhighlight %}
+```
 
 Moving onto the Mutt side. I spent ages trying to work out why my
 `$email_pass` variable wasn't working in my `muttrc`.
 
-{% highlight bash %}
+```
 ###
 # .muttrc
 ###
@@ -56,12 +56,12 @@ set smtp_pass = $email_pass
 # imap
 set imap_pass = $email_pass
 ...
-{% endhighlight %}
+```
 
 It's actually required that you prepend all variables with `my_` for them to
 work.
 
-{% highlight bash %}
+```
 ###
 # .muttrc
 ###
@@ -75,7 +75,7 @@ set smtp_pass = $my_pass
 # imap
 set imap_pass = $my_pass
 ...
-{% endhighlight %}
+```
 
 Job done. Now when you open Mutt, you'll be able to log into your email after
 entering your keyring password.

@@ -15,15 +15,15 @@ Stream](http://www.rainbowstream.org/) and my latest venture
 
 On Linux Mint the installation is pretty trivial.
 
-{% highlight bash %}
+```
 sudo apt-get update && sudo apt-get install mutt
-{% endhighlight %}
+```
 
 You then need to setup the `~/.muttrc` config file. From what I've seen so
 far, there's an endless list of options, however only a handful are needed to
 actually connect to your mailbox.
 
-{% highlight bash %}
+```
 ###
 # .muttrc
 ###
@@ -75,7 +75,7 @@ color quoted      green     default
 color signature   cyan      default
 color tilde       blue      default
 color tree        red       default
-{% endhighlight %}
+```
 
 If you are using STARTTLS or SSL/TLS then you should use `imaps/smpts` in the
 URLs. The colours are copied from `/etc/Muttrc.d/colors.rc` with some small
@@ -87,14 +87,14 @@ an email, only for it to hang on the `Logging In` status. In the end I tracked
 this down to an incorrect `record` URL. Mutt debug mode is extremely useful
 should you hit any issues during the setup.
 
-{% highlight bash %}
+```
 mutt -d2 # 5 levels of debug 1-5
-{% endhighlight %}
+```
 
 This starts Mutt logging to `~/.muttdebug0`. When Mutt first connects to your
 mailbox, it'll request a listing of all folders.
 
-{% highlight bash %}
+```
 4< * LIST (\Noselect) "." ""
 4< a0002 OK LIST completed
 4< * LSUB (\HasNoChildren) "." "INBOX.Junk"
@@ -107,7 +107,7 @@ mailbox, it'll request a listing of all folders.
 4< * LSUB (\HasNoChildren) "." "INBOX.Templates"
 4< * LSUB (\Noselect \HasChildren) "." "INBOX"
 4< a0003 OK LSUB completed
-{% endhighlight %}
+```
 
 You can see how the sub-folders are listed by the mail server &mdash; this is
 how you need to reference sub-folders in `.muttrc` file.
@@ -120,7 +120,7 @@ I'd skip straight to the [index](http://www.mutt.org/doc/manual/#intro-index)
 section if you are just starting out. However some of the index status are
 below.
 
-{% highlight bash %}
+```
 # Message status flags
 
 D       message is deleted (is marked for deletion)
@@ -144,4 +144,4 @@ T       message is to you, but also to or CC'ed to others
 C       message is CC'ed to you
 F       message is from you
 L       message is sent to a subscribed mailing list
-{% endhighlight %}
+```

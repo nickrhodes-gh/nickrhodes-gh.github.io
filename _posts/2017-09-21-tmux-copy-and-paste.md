@@ -26,12 +26,12 @@ available in 1.8. The tmux 2.5 man pages contain the following mouse events
 which are picked up by tmux.
 
 ```
-WheelUp       WheelDown                  
+WheelUp       WheelDown
 MouseDown1    MouseUp1      MouseDrag1   MouseDragEnd1
 MouseDown2    MouseUp2      MouseDrag2   MouseDragEnd2
 MouseDown3    MouseUp3      MouseDrag3   MouseDragEnd3
-DoubleClick1  DoubleClick2  DoubleClick3 WheelUp      
-TripleClick1  TripleClick2  TripleClick3 WheelDown    
+DoubleClick1  DoubleClick2  DoubleClick3 WheelUp
+TripleClick1  TripleClick2  TripleClick3 WheelDown
 ```
 
 These are not the complete event names as they need to be suffixed with a
@@ -41,11 +41,11 @@ drag in  a pane it will pipe the selected text to the following command `xclip
 clipboards available.
 
 ```
--selection         
+-selection
    specify  which  X  selection  to use, options are "primary" to use XA_PRIMARY (default),
-   "secondary" for XA_SECONDARY or "clipboard" for XA_CLIPBOARD                            
+   "secondary" for XA_SECONDARY or "clipboard" for XA_CLIPBOARD
 
-``` 
+```
 
 If you want to paste using mouse wheel click and `ctrl-alt v` then you need to
 pipe the selected text into the `primary` clipboard as well as the

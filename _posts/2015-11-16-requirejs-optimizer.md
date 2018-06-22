@@ -13,16 +13,16 @@ is run through all of the dependencies that have been named in the current
 project, then combine them into a single file and minify them. For some reason
 I'm not using the grunt RequireJS task&hellip; ah well.
 
-{% highlight js %}
+```
 npm install requirejs --save-dev
-{% endhighlight %}
+```
 
 I decided to use a `build.js` file to store the optimizer config just to make
 coming back to the config easier in the future. My JavaScript files are all
 contained within a single `js` directory so this is where I stuck the
 `build.js` file.
 
-{% highlight js  %}
+```
 ({
   baseUrl: ".",
   name: "app", // app.js
@@ -31,7 +31,7 @@ contained within a single `js` directory so this is where I stuck the
     jquery: "empty:" // unmap the jquery alias
   }
 })
-{% endhighlight %}
+```
 
 My build file is pretty simple, the only thing worth noting is the fact that I
 need to essentially un-map the jQuery name. The optimizer is unable to
@@ -48,13 +48,13 @@ to `app.js`. However the optimiser spits out an `app-built.js` (due to my
 config) file after the build process, so the script `src` needs to change in
 the page.
 
-{% highlight html %}
+```
 <script
   async
   data-main="../js/app-built"
   src="<link-to-requirejs">
 </script>
-{% endhighlight %}
+```
 
 Now I can continuously build the modules using `app-built.js` while rest of my
 configuration remains exactly the same.

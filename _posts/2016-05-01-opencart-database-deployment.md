@@ -34,7 +34,7 @@ server (the ones you don't want to overwrite). Having been through the DB
 several times, these are the tables I think are core tables that hold data
 unique to production.
 
-{% highlight sql %}
+```
 -- Tables holding core store data
 oc_affiliate*
 oc_customer*
@@ -45,24 +45,24 @@ oc_setting*
 oc_user*
 oc_voucher*
 oc_coupon*
-{% endhighlight %}
+```
 
 Using mysqldump it's pretty straight forward to ignore these.
 
-{% highlight bash %}
+```
 # source DB
 mysqldump --ignore-table <table_name> db_name > dump_file.sql
 
 # dest DB
 mysql db_name < dump_file.sql
-{% endhighlight %}
+```
 
 But that all involves connecting into the server via ssh blah blah blah.
 
 In an attempt to automate this slightly I decided to pipe the dump over ssh to
 the destination server.
 
-{% highlight bash %}
+```
 ignore= \
   $(mysql source_db -e "show tables" | \
   egrep "(customer|review|history|return|order|address|setting|user|affiliate)" | \
@@ -82,7 +82,7 @@ if mysqldump \
  then exit 0; \
  else exit 1; \ #hopefully catch connection issues etc
  fi
-{% endhighlight %}
+```
 
 This works great if you've setup your `~/.ssh/config` file to login using
 certs.  You still need to ssh into the server to run the script. You could
@@ -94,9 +94,9 @@ run a shell script containing the mysqldump code above.  This means I can take
 advantage of the Openshift environment variables which store the mysql login
 details.
 
-{% highlight php %}
+```
 exec('path/to/script.sh', $output, $status_code);
-{% endhighlight %}
+```
 
 The `if` statement in the shell script provides a return status to the php
 script. It can be improved.

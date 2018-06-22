@@ -33,18 +33,18 @@ it using the [CloudFlare CDN](http://cdnjs.com/libraries/require.js/), however
 RequireJS actually recommend downloading it locally. I've added `async` to to
 the `script` tag as I don't care how it loads.
 
-{% highlight html %}
+```
 <script
   async
   data-main="../js/app"
   src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.20/require.min.js">
 </script>
-{% endhighlight %}
+```
 
 The `data-main="../js/app"` defines your requirejs config file, you can also
 use it as the entry file as well. My `app.js` file contains:
 
-{% highlight js %}
+```
 // Setup require.js config
 requirejs.config({
   "baseUrl": "../js",
@@ -55,7 +55,7 @@ requirejs.config({
 });
 
 require(["main"]);
-{% endhighlight %}
+```
 
 So I've included some things which technically I don't need: `"baseUrl":
 "../js"` because all of my files are in the same directory as `../js/app`
@@ -75,7 +75,7 @@ that `main.js` should be run on start. Inside `main.js` is where the site wide
 javascript functions are placed. If you're running a larger code base then
 obviously you would break these out into separate files.
 
-{% highlight js %}
+```
 //main.js
 define(["jquery", "cookie"], function ($, cook) {
 
@@ -104,7 +104,7 @@ define(["jquery", "cookie"], function ($, cook) {
   monCookieControl()
 
 });
-{% endhighlight %}
+```
 
 Here I am using `define` to set which modules the enclosed script depends on.
 Clearly it needs jQuery, and also a second module called cookie. I also create
@@ -113,7 +113,7 @@ two AMD return values, `$` and `cook` which allow me to reference `jquery` and
 
 The cookie module looks like.
 
-{% highlight js %}
+```
 // cookies
 define(function () {
 
@@ -156,7 +156,7 @@ define(function () {
   }
 
 })
-{% endhighlight %}
+```
 
 In `cookie.js` `define` is used without any dependencies as it has none. It's
 also important to return the functions we need to access in `main.js`.
@@ -173,7 +173,7 @@ course JavaScript and CSS loading.
 
 A basic example:
 
-{% highlight js %}
+```
 // Load up some JS
 head.load("jQuery.js", function() {
   // callback
@@ -182,7 +182,7 @@ head.load("jQuery.js", function() {
 
 // Load up some CSS
 head.load("bootstrap.css");
-{% endhighlight %}
+```
 
 Great, that's super simple! My only issue with the module is that it hasn't
 been updated [for a long time](https://github.com/headjs/headjs/issues/335).
