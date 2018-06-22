@@ -30,7 +30,7 @@ So far it's been a fantastic service.
 
 ### Customising the chat client
 
-Tawk.to provide some basic client configuration in their web-backend such as:
+Tawk.to provide some basic client configuration in their admin interface such as:
 chat window colour, width and default text.
 
 Luckily Tawk.to also provide an API through which you can hook into various
