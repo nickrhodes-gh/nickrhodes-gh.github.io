@@ -1,0 +1,25 @@
+body {
+    font-family: "monospace";
+    font-size: 14px;
+}
+a {
+    color: #61afef;
+    text-decoration: none;
+
+    &:hover {
+        color: #61afef;
+        text-decoration: none;
+    }
+}
+.container {
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: auto;
+    margin: 0 auto;
+    max-width: 80%;
+    justify-items: center
+
+    .row {
+
+    }
+}
