@@ -63,16 +63,16 @@ $ id ftp_user
 uid=501(ftp_user) gid=502(sftponly) groups=502(sftponly)
 
 $ grep ftp_user /etc/passwd
-ftp_user:x:501:502:::/sbin/nologin
+ftp_user:x:501:502::/files:/sbin/nologin
 ```
 
 The permissions on the `/data` directory are quite specific.
 
 ```
 drwxr-xr-x. 3 root      root        4096 Sep 21 19:27 /data/
-drwxr-xr-x. 4 root      sftponly    4096 Sep 21 19:51 /data/ftp_user/
+drwxr-xr-x. 4 root      sftponly    4096 Sep 21 19:51 /data/ftp_user/       <-- chroot directory
 drwxr-xr-x. 2 root      root        4096 Sep 21 20:09 /data/ftp_user/dev/
-drwxr-xr-x. 2 ftp_user  sftponly    4096 Sep 21 20:17 /data/ftp_user/files/
+drwxr-xr-x. 2 ftp_user  sftponly    4096 Sep 21 20:17 /data/ftp_user/files/ <-- users home directory
 ```
 
 The `ftp_user` will log into the `/data/ftp_user` directory. From this
