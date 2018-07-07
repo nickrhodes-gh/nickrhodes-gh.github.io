@@ -61,10 +61,6 @@ code {
     margin: 0 auto;
     max-width: 800px;
     justify-items: center;
-
-    .row {
-
-    }
 }
 
 header {
@@ -81,7 +77,7 @@ header {
 }
 .post-footer {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr;
     justify-items: center;
 }
 div.highlight {
