@@ -23,4 +23,4 @@ Find me on [LinkedIn][linkedin] / [Github][github].
 
 [rs]: https://www.rackspace.co.uk
 [linkedin]: https://www.linkedin.com/in/nickrhodes1
-[github]: https://github.com/nickrhodes-gh
+[github]: https://github.com/nrhodes91
