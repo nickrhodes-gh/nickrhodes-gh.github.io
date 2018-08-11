@@ -1,21 +1,14 @@
 # Harmony Jekyll theme general configurations
 
-# Base URL
 baseurl: ""
-
-# Site live URL
 url: http://nrhodes91.github.io
-
-# Harmony theme configuration. Please change accordingly.
 harmony:
   name: Nicholas Rhodes
   description: Life on Linux
   meta_description: > #
     Random posts on Linux
-  basetheme: theme-base-01 # pre defined thmes are darken, blue-water, redish.
-
   social:
-    github:
+    github: https://github.com/nrhodes91
 
 markdown: kramdown
 highlighter: rouge
@@ -28,7 +21,6 @@ exclude:
   - .gitignore
   - .sass-cache
 
-# Sass conversion configs
 sass:
     sass_dir: assets/css/_sass
     style: :compressed
