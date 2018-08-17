@@ -69,10 +69,11 @@ The issue with using the Ubuntu `os-prober` script is that it only searches for
 `initrd16` at the start of the lines, hence the `os-prober` fails to find the
 correct Fedora menu entries.
 
-In the end copied `/usr/lib/linux-boot-probes/mounted/40grub2` to
-`41grub2-linux16` and replaced `linux` and `initrd` case matches with `linux16`
-and `initrd16`. After this the test command `linux-boot-prober` printed out the
-correct kernel parameters for each kernel in Fedora's `/boot`.
+In the end I copied `/usr/lib/linux-boot-probes/mounted/40grub2` to
+`41grub2-linux16`, and replaced the `linux` and `initrd` case matches with
+`linux16` and `initrd16` respectively. I then checked to see if the test command
+`linux-boot-prober` printed out the correct kernel parameters for each kernel in
+Fedora's `/boot`.
 
 ```patch
 @@ -64,7 +64,7 @@
@@ -96,6 +97,6 @@ correct kernel parameters for each kernel in Fedora's `/boot`.
 
 ```
 
-After this the Ubuntu `update-grub` command successfully found all of the kernel
+After making the change, Ubuntu's `update-grub` command successfully found all of the kernel
 arguments for Fedora, and my Nvidia drivers were working again with an Ubuntu
 installed grub!
