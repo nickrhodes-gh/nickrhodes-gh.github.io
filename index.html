@@ -10,7 +10,6 @@ layout: default
                     {{ post.title }}
                 </a>
             </h3>
-
             <p class="post-meta">
             {% if post.categories.size > 0 %}
             <span class="categories">
@@ -25,9 +24,7 @@ layout: default
             {{ post.excerpt }}
             </p>
             <p>
-            <a href="{{ post.url | prepend: site.baseurl | prepend: site.url }}" title="{{ post.title}}">
-                Read More
-            </a>
+            <a href="{{ post.url | prepend: site.baseurl | prepend: site.url }}" title="{{ post.title}}">Read More</a>
             </p>
         </div>
         {% endfor %}
