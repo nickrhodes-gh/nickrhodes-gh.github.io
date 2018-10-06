@@ -77,7 +77,7 @@ header {
 }
 .post-footer {
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(3, 1fr);
     justify-items: center;
 }
 div.highlight {
