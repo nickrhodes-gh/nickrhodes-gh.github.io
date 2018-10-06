@@ -70,6 +70,11 @@ header {
     margin: 50px auto 0 auto;
     max-width: 800px;
 }
+@media (max-width: 900px) {
+    .page-content {
+        margin: 50px;
+    }
+}
 .related,
 .post-footer,
 .post {
