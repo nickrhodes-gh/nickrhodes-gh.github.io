@@ -57,12 +57,11 @@ appending them to the end of the `linux` line.
 ```
 
 My understanding of the `os-prober` script is that it works by scanning for
-unmounted partitions, and temporarily mounting and that are not currently
-mounted. It will then search the mounted file system for the `/boot` directory.
-Once it finds a `/boot` directory it will run the grub.cfg file through a series
-of 'test' files located in `/usr/lib/linux-boot-probes/mounted/`. The scripts
-are looking for the menu entry blocks, and specifically the `linux` and `initrd`
-lines, amongst others.
+unmounted partitions, temporarily mounting them, and then search for a boot
+directory. When it finds a boot directory it runs the grub.cfg file through a
+series of 'test' files located in
+`/usr/lib/linux-boot-probes/mounted/`. The scripts are looking for the menu
+entry blocks, and specifically the `linux` and `initrd` lines, amongst others.
 
 The issue with using the Ubuntu `os-prober` script is that it only searches for
 `linux` and `initrd`, whereas the Fedora `grub.cfg` files contain `linux16` and
