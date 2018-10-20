@@ -80,7 +80,8 @@ header {
 .post {
     margin-top: 50px;
 }
-.post-footer {
+.post-footer,
+.nav-icons {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     justify-items: center;
