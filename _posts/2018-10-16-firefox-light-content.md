@@ -12,8 +12,9 @@ Anyone who has used a dark GTK theme will have noticed that Firefox will render
 any un-styled input boxes using the default dark GTK background. This often
 makes for unreadable text within the input.
 
-For a very long time used the following desktop entry to force Firefox to
-render using a light GTK theme even when using a dark theme for the desktop.
+For a very long time I used the following desktop entry to force Firefox to
+render using a light GTK theme, even when using a dark GTK theme for the
+desktop.
 
 ```
 [Desktop Entry]
