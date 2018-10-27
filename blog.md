@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Blog archive
+title: Archived blog posts
 ---
 <div class="page-content wc-container">
   <h3>Blog Archive</h3>

@@ -70,14 +70,20 @@ header {
     margin: 50px auto 0 auto;
     max-width: 800px;
 }
+@media (max-width: 900px) {
+    .page-content {
+        margin: 50px;
+    }
+}
 .related,
 .post-footer,
 .post {
     margin-top: 50px;
 }
-.post-footer {
+.post-footer,
+.nav-icons {
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(3, 1fr);
     justify-items: center;
 }
 div.highlight {
