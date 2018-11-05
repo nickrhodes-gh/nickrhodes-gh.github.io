@@ -66,6 +66,15 @@ code {
 header {
     margin-top: 50px;
 }
+.nav-links {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin-top: 20px;
+    width: 100%;
+    > div {
+        justify-self: center;
+    }
+}
 .page-content {
     margin: 50px auto 0 auto;
     max-width: 800px;
