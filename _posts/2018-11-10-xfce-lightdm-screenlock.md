@@ -8,8 +8,9 @@ description: >
 ---
 
 From an clean Arch install I was struggling to get lightdm playing nicely with
-several screen locking applications. The symptoms were always the same
-regardless of the locker installed:
+several screen locking applications.
+
+The symptoms were always the same regardless of the locker installed:
 
 - the initial login prompt on first boot would display and function without
   issue
