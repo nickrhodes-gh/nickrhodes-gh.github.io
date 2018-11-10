@@ -1,7 +1,7 @@
 ---
 layout: post
 title: >
-    Setting up screen lock in xfce4
+    Setting up screen locking in xfce4
 description: >
     Getting screen locking to work in xfce4 with lightdm and light-locker
 
