@@ -19,7 +19,7 @@ regardless of the locker installed:
 - typing the password at the black screen would successfully unlock the desktop
 
 It was also possible to display the lightdm login prompt by switching to another
-vt and back to vt8.
+vt (e.g. vt6 ctrl+alt+F6) and back to vt8.
 
 In the end I was able to resolve the issue by installing the `xf86-video-intel`
 package. After a reboot the display is now resuming to the lightdm login prompt
