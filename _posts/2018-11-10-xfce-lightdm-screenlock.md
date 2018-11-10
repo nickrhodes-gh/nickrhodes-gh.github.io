@@ -12,12 +12,12 @@ several screen locking applications.
 
 The symptoms were always the same regardless of the locker installed:
 
-- the initial login prompt on first boot would display and function without
+1. The initial login prompt on first boot would display and function without
   issue
-- when running an of `xflock4`, `light-locker-command -l`, or `dm-tools lock`
+2. When running an of `xflock4`, `light-locker-command -l`, or `dm-tools lock`
   the screen would go black and would not return despite using the
   mouse/keyboard
-- typing the password at the black screen would successfully unlock the desktop
+3. Typing the password at the black screen would successfully unlock the desktop
 
 It was also possible to display the lightdm login prompt by switching to another
 vt (e.g. vt6 ctrl+alt+F6) and back to vt8.
