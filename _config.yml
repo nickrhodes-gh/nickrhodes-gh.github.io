@@ -3,22 +3,16 @@ url: https://nrhodes91.github.io
 harmony:
   name: Nick Rhodes
   description: Life on Linux
-  meta_description: > #
+  meta_description: >
     Random posts on Linux
   social:
     github: https://github.com/nrhodes91
-
 markdown: kramdown
 highlighter: rouge
-
 permalink: pretty
-
 exclude:
-  - CNAME
-  - README.md
   - .gitignore
   - .sass-cache
-
 sass:
     sass_dir: assets/css/_sass
     style: :compressed
