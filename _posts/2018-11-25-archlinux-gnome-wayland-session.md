@@ -8,14 +8,14 @@ description: >
 
 ---
 
-Firstly, I'm running a Dell XPS 9360, so my issues weren't related to 90% of the
-"GDM won't load wayland" threads which almost exclusively involve Nvidia
-graphics cards.
+First things first, I'm running a Dell XPS 9360, so my issues weren't related to
+90% of the "GDM won't load wayland" threads which almost exclusively involve
+Nvidia graphics cards.
 
 It actually took me some time to realise that I wasn't running within a Wayland
 session on my recent Arch install - I had just assumed that GDM would default to
 Wayland over the fallback X11 session. However after hooking up a couple of
-monitors over a thunderbolt connection I noticed differences between my running
+monitors over a thunderbolt connection, I noticed differences between my running
 in Fedora and Arch installations.
 
 A quick check revealed that I was in fact running the X11 session:
@@ -38,10 +38,10 @@ It took a lot of searching, however I found [the
 following](https://wiki.archlinux.org/index.php/Kernel_mode_setting#Early_KMS_start)
 information regarding kms not starting early enough for GDM. The pretty straight
 forward workaround is to add i915 to the `MODULES=()` list in
-`/etc/mkinitcpio.conf`. After doing this you need to rebuild the initramfs with
-`mkinitcpio -p linux`, and reboot. After the reboot I was offered the choice of "Gnome",
-"Gnome-classic" and "Gnome on X" at the login prompt, and could finally start
-running wayland.
+`/etc/mkinitcpio.conf`. After the reboot you need to rebuild the initramfs with
+`mkinitcpio -p linux`, and reboot. You should be offered the choice of "Gnome",
+"Gnome-classic" and "Gnome on X" sessions at the login prompt, and be able to
+start running wayland.
 
 ```sh
 % echo $XDG_SESSION_TYPE
