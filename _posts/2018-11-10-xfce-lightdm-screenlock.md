@@ -7,7 +7,7 @@ description: >
 
 ---
 
-From an clean Arch install I was struggling to get `lightdm` playing nicely with
+From a clean Arch install I was struggling to get `lightdm` playing nicely with
 several screen locking applications.
 
 The symptoms were always the same regardless of the locker installed:
