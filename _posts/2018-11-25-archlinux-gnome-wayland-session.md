@@ -37,11 +37,11 @@ Nov 24 21:35:40 arch gnome-shell[384]: Failed to create backend: Could not find 
 It took a lot of searching, however I found [the
 following](https://wiki.archlinux.org/index.php/Kernel_mode_setting#Early_KMS_start)
 information regarding kms not starting early enough for GDM. The pretty straight
-forward workaround is to add i915 to the `MODULES=()` list in
+forward workaround is to add `i915` to the `MODULES=()` list in
 `/etc/mkinitcpio.conf`. After the reboot you need to rebuild the initramfs with
-`mkinitcpio -p linux`, and reboot. You should be offered the choice of "Gnome",
-"Gnome-classic" and "Gnome on X" sessions at the login prompt, and be able to
-start running wayland.
+`mkinitcpio -p linux`, and reboot. You should now be offered the choice of
+"Gnome", "Gnome-classic" and "Gnome on X" sessions at the login prompt, and be
+able to start running wayland.
 
 ```sh
 % echo $XDG_SESSION_TYPE
