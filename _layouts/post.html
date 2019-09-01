@@ -22,13 +22,13 @@ layout: default
 	<div class="post-footer">
 		<div class="column-1">
 			{% if page.next %}
-				<a href="{{page.next.url | prepend: site.url | prepend: site.url }}"><< Previous</a>
+                        <a href="{{ site.url }}/{{page.next.url }}"><< Previous</a>
 			{% endif %}
 		</div>
-		<div class="column-2"><a href="{{ '/' | prepend: site.url | prepend: site.url }} ">Home</a></div>
+		<div class="column-2"><a href="{{ site.url }} ">Home</a></div>
 		<div class="column-3">
 			{% if page.previous %}
-				<a href="{{ page.previous.url | prepend: site.url | prepend: site.url }}">Next >></a>
+                        <a href="{{ site.url }}/{{ page.previous.url }}">Next >></a>
 			{% endif %}
 		</div>
 	</div>
