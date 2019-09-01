@@ -9,7 +9,7 @@ body {
   font-weight: 400;
   font-size: 14px;
   line-height: 1.45;
-  color: #333;
+  color: #000;
 }
 
 p, div.highlighter-rouge {margin-bottom: 1.3em;}
@@ -39,11 +39,11 @@ ending defaults
 \*                  */
 
 a {
-    color: #1477c8;
+    color: #1763a2;
     text-decoration: none;
 
     &:hover {
-        color: #61afef;
+        color: #1b76c0;
         text-decoration: none;
     }
 }
@@ -87,7 +87,7 @@ header {
 .related,
 .post-footer,
 .post {
-    margin-top: 50px;
+    margin: 50px 0;
 }
 .post-footer,
 .nav-icons {
