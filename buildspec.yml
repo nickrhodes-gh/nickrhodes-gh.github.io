@@ -32,6 +32,7 @@ phases:
   post_build:
     commands:
       - ls -la
+      - cp -a .ebextensions _site/
       # - command
 artifacts:
   files:
