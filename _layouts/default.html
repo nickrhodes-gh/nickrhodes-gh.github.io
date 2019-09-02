@@ -8,6 +8,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="description" content="{% if page.meta_description %}{{ page.meta_description }}{% else %}{{ site.meta_description }}{% endif %}">
         <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.url }}">
+        <link rel="stylesheet" type="text/css" href="{{ site.url }}/assets/css/syntax.css">
+        <link rel="stylesheet" type="text/css" href="{{ site.url }}/assets/css/style.css">
     </head>
     <body class="{{ site.basetheme }}">
         <div class="page-content wc-container">
@@ -24,8 +26,5 @@
                 {{ content }}
             </div>
         </div>
-
-        <link rel="stylesheet" type="text/css" href="{{ site.url }}/assets/css/syntax.css">
-        <link rel="stylesheet" type="text/css" href="{{ site.url }}/assets/css/style.css">
     </body>
 </html>
