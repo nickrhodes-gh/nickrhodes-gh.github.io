@@ -17,14 +17,14 @@ layout: default
     {{ content }}
 </div>
 
-<div class="post-footer">
-    <div class="column-1">
+<div class="grid footer">
+    <div class="grid-item">
         {% if page.next %}
         <a href="{{ site.url }}{{ page.next.url }}"><< Previous</a>
         {% endif %}
     </div>
-    <div class="column-2"><a href="{{ site.url }} ">Home</a></div>
-    <div class="column-3">
+    <div class="grid-item"><a href="{{ site.url }} ">Home</a></div>
+    <div class="grid-item">
         {% if page.previous %}
         <a href="{{ site.url }}{{ page.previous.url }}">Next >></a>
         {% endif %}

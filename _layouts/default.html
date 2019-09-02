@@ -12,9 +12,9 @@
         <link rel="stylesheet" type="text/css" href="{{ site.url }}/assets/css/style.css">
     </head>
     <body class="{{ site.basetheme }}">
-        <div class="page-content wc-container">
+        <div class="grid page-container">
             <div class="grid-item sidebar">
-                <div class="profile"></div>
+                <img class="profile" src="/assets/images/profile.jpg" />
                 <h1><a href="{{ site.url }}/">{{ site.name }}</a></h1>
                 <div class="nav-links">
                     <div> <a href="{{ site.url }}/">Home</a> </div>
@@ -22,7 +22,7 @@
                     <div> <a href="{{ site.url }}/archive/">Archive</a> </div>
                 </div>
             </div>
-            <div class="grid-item">
+            <div class="grid-item content">
                 {{ content }}
             </div>
         </div>
