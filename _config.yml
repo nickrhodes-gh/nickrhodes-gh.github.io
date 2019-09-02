@@ -1,12 +1,11 @@
 baseurl: ""
 url: https://nicholasrhodes.co.uk
-harmony:
-  name: Nicholas Rhodes
-  description: ''
-  meta_description: >
-    Random posts on Linux
-  social:
-    github: https://github.com/nrhodes91
+name: Nicholas Rhodes
+description: ''
+meta_description: >
+  Random posts on Linux
+social:
+  github: https://github.com/nrhodes91
 markdown: kramdown
 highlighter: rouge
 permalink: pretty

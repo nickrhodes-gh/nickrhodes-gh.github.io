@@ -1,103 +1,48 @@
 ---
 ---
 
-html {font-size: 0.875em;}
-
 body {
-  background-color: white;
-  font-family: Monospace;
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 1.45;
-  color: #000;
+    font-family: "Ubuntu";
+    font-size: 16px;
 }
-
-p, div.highlighter-rouge {margin-bottom: 1.3em;}
-
-h1, h2, h3, h4 {
-  margin: 0.5em 0;
-  font-weight: inherit;
-  line-height: 1.2;
-}
-
-h1 {
-  margin-top: 0;
-  font-size: 3.157em;
-}
-
-h2 {font-size: 2.369em;}
-
-h3 {font-size: 1.777em;}
-
-h4 {font-size: 1.333em;}
-
-small, .font_small {font-size: 0.75em;}
-
-
-/*                  *\
-ending defaults
-\*                  */
-
 a {
-    color: #1763a2;
     text-decoration: none;
-
-    &:hover {
-        color: #1b76c0;
-        text-decoration: none;
-    }
+    color: #0054a8;
 }
-code {
-    background-color: #efefef;
-
-    &.highlighter-rouge {
-        padding: 1px 10px;
-    }
-}
-.container {
+.wc-container {
     display: grid;
-    grid-template-columns: 100%;
-    grid-template-rows: auto;
+    grid-template-columns: 25% 75%;
+    max-width: 1200px;
     margin: 0 auto;
-    max-width: 800px;
-    justify-items: center;
 }
+.grid-item {
+    &.sidebar {
+        grid-column: 1;
+        margin-right: 20px;
 
-header {
-    margin-top: 50px;
-}
-.nav-links {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    margin-top: 20px;
-    width: 100%;
-    > div {
-        justify-self: center;
+        h1 {
+            text-align: center;
+        }
+
+        .nav-links {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            text-align: center;
+        }
+        .profile {
+            background-image: url("/assets/images/profile.jpg");
+            background-size: 200px;
+            background-repeat: no-repeat;
+            background-position: center;
+            border-radius: 100%;
+            height: 200px;
+            width: 200px;
+            margin: 0 auto;
+            display: block;
+        }
     }
-}
-.page-content {
-    margin: 50px auto 0 auto;
-    max-width: 800px;
-}
-@media (max-width: 900px) {
-    .page-content {
-        margin: 50px;
+    .posts {
+        grid-column: 2;
+        margin-left: 20px;
     }
-}
-.related,
-.post-footer,
-.post {
-    margin: 50px 0;
-}
-.post-footer,
-.nav-icons {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    justify-items: center;
-}
-.column-full {
-    grid-column: 1 / span end;
-}
-div.highlight {
-    overflow: auto;
 }

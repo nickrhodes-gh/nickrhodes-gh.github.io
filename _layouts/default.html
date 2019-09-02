@@ -4,26 +4,27 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <link rel="shortcut icon" href="/favicon.ico?v={{ site.time }}">
-        <title>{% if page.title %}{{ page.title }}{% else %}{{ site.harmony.name }}{% endif %}</title>
+        <title>{% if page.title %}{{ page.title }}{% else %}{{ site.name }}{% endif %}</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="description" content="{% if page.meta_description %}{{ page.meta_description }}{% else %}{{ site.harmony.meta_description }}{% endif %}">
+        <meta name="description" content="{% if page.meta_description %}{{ page.meta_description }}{% else %}{{ site.meta_description }}{% endif %}">
         <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.url }}">
-
-        <link rel="stylesheet" type="text/css" href="{{ site.url }}/assets/css/reset.css">
-        <link rel="stylesheet" type="text/css" href="{{ site.url }}/assets/css/syntax.css">
-        <link rel="stylesheet" type="text/css" href="{{ site.url }}/assets/css/style.css">
-
     </head>
-    <body class="{{ site.harmony.basetheme }}">
-        <header class="main-header">
-            <div class="container">
-                <h1 class="row"><a href="{{ site.url }}/">{{ site.harmony.name }}</a></h1>
-                {% include header-links.html %}
+    <body class="{{ site.basetheme }}">
+        <div class="page-content wc-container">
+            <div class="grid-item sidebar">
+                <div class="profile"></div>
+                <h1><a href="{{ site.url }}/">{{ site.name }}</a></h1>
+                <div class="nav-links">
+                    <div> <a href="{{ site.url }}/">Home</a> </div>
+                    <div> <a href="{{ site.url }}/about/">About</a> </div>
+                    <div> <a href="{{ site.url }}/archive/">Archive</a> </div>
+                </div>
             </div>
-        </header>
-        {{ content }}
+            <div class="grid-item">
+                {{ content }}
+            </div>
+        </div>
 
-        <link rel="stylesheet" type="text/css" href="{{ site.url }}/assets/css/reset.css">
         <link rel="stylesheet" type="text/css" href="{{ site.url }}/assets/css/syntax.css">
         <link rel="stylesheet" type="text/css" href="{{ site.url }}/assets/css/style.css">
     </body>
