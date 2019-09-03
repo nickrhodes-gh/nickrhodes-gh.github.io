@@ -1,34 +1,25 @@
 version: 0.2
-
-#env:
-  #variables:
-     # key: "value"
-  #parameter-store:
-     # key: "value"
-  #git-credential-helper: yes
-
+env:
+  variables:
+     JEKYLL_VERSION: 3.8
 phases:
   install:
     runtime-versions:
       docker: 18
     commands:
       - docker --version
-      - docker pull jekyll/builder:3.8
-  #pre_build:
-    #commands:
-      # - command
-  build:
+      - docker pull jekyll/builder:$JEKYLL_VERSION
+  pre_build:
     commands:
       - chown -R 1000:1000 $CODEBUILD_SRC_DIR
-      - docker run --rm --volume="$CODEBUILD_SRC_DIR:/srv/jekyll" jekyll/builder:3.8 jekyll build --trace
+  build:
+    commands:
+      - docker run --rm --volume="$CODEBUILD_SRC_DIR:/srv/jekyll" jekyll/builder:$JEKYLL_VERSION jekyll build
   post_build:
     commands:
       - ls -la
       - cp -a .ebextensions _site/
-      # - command
 artifacts:
   files:
     - '**/*'
-  #name: $(date +%Y-%m-%d)
-  #discard-paths: yes
   base-directory: _site/
