@@ -1,10 +1,10 @@
 ---
 layout: post
 title: >
-    Part 1: Setting up AWS CodeBuild to deploy a Jekyll site
+    Part 1: Setting up AWS CodeBuild to build a Jekyll site
 description: >
-    Taking a look at the process to setup the AWS CodeDeploy pipeline used to
-    build and deploy this site.
+    Part 1 takes a look at the process to setup the AWS CodeDeploy build phase
+    used to build and deploy this site.
 ---
 
 I recently decided to migrate my site from Github pages to AWS. To ensure it
