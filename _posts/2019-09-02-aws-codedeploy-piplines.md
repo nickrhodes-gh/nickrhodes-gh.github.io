@@ -133,17 +133,17 @@ The reason for the `chown` is that jekyll runs the build with user id 1000 by
 default, while the container clones the source as root.
 
 ### Artifacts
-The final section in my buildspec. Artifacts are build output that are to be
-stored S3 for subsequent use. When using the CodeDeploy Pipelines this section
-isn't strictly necessary as you will override the Artifacts configured here with
-one created in your CodeDeploy pipeline. This one is useful for testing builds
-outside of a pipeline though.
+The final section in my buildspec. Artifacts define build output
+directories/files that should be stored in S3 for subsequent use. If you're
+using CodeDeploy Pipelines then this section isn't strictly necessary as you
+will override the Artifacts configured here with one created in the pipeline.
+This one is useful for testing builds outside of a pipeline though.
 
-In the case of the Jekyll build, the static output is stored in `_site/`, so
-this is what we can't to store.
+In the case of the Jekyll build, the static site output is stored in `_site/`,
+so this is what we can't to store.
 
 ## Optimisation
-As I alluded to earlier that there are some optimisations to be made when
+As I alluded to earlier, that there are some optimisations to be made when
 setting up the build. As an example, I was initially using the Ubuntu 18.04
 image with the Ruby 2.6 runtime. I then installed Jekyll via `gem install jekyll
 bundler`.  However this involved compiling the C libraries which took close to 3
@@ -158,3 +158,11 @@ pull down, docker will use the locally cached image. After making this small
 change I was able to get build times down to around 12 seconds on average.
 
 ![codebuild-docker-layer-cache](/assets/images/codebuild-docker-layer-cache.png)
+
+According to the [AWS documentation][aws-local-cache], the local cache if only
+available for a limited time, and is intended to be used for quick back to back
+builds of large projects.
+
+[aws-local-cache]: https://aws.amazon.com/blogs/devops/improve-build-performance-and-save-time-using-local-caching-in-aws-codebuild/
+
+**Part 2 in progress.**
