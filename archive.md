@@ -11,6 +11,6 @@ title: Archived blog posts
 <ul class="posts">
     {% capture year %}{{currentyear}}{% endcapture %}
     {% endif %}
-    <li>- <a href="{{ site.url }}{{ post.url }}">{{ post.title }}</a></li>
+    <li>- <a href="{{ post.url }}">{{ post.title }}</a></li>
     {% if forloop.last %}</ul>{% endif %}
 {% endfor %}

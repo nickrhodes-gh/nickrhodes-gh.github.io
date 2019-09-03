@@ -8,18 +8,18 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="description" content="{% if page.meta_description %}{{ page.meta_description }}{% else %}{{ site.meta_description }}{% endif %}">
         <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.url }}">
-        <link rel="stylesheet" type="text/css" href="{{ site.url }}/assets/css/syntax.css">
-        <link rel="stylesheet" type="text/css" href="{{ site.url }}/assets/css/style.css">
+        <link rel="stylesheet" type="text/css" href="/assets/css/syntax.css">
+        <link rel="stylesheet" type="text/css" href="/assets/css/style.css">
     </head>
     <body class="{{ site.basetheme }}">
         <div class="grid page-container">
             <div class="grid-item sidebar">
                 <img class="profile" src="/assets/images/profile.jpg" />
-                <h1><a href="{{ site.url }}/">{{ site.name }}</a></h1>
+                <h1><a href="/">{{ site.name }}</a></h1>
                 <div class="nav-links">
-                    <div> <a href="{{ site.url }}/">Home</a> </div>
-                    <div> <a href="{{ site.url }}/about/">About</a> </div>
-                    <div> <a href="{{ site.url }}/archive/">Archive</a> </div>
+                    <div> <a href="/">Home</a> </div>
+                    <div> <a href="/about/">About</a> </div>
+                    <div> <a href="/archive/">Archive</a> </div>
                 </div>
             </div>
             <div class="grid-item content">

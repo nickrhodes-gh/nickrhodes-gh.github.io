@@ -5,7 +5,7 @@ permalink: /about/
 
 ---
 
-![About me]({{ site.url }}/assets/images/about_me.jpg)
+![About me](/assets/images/about_me.jpg)
 
 Hi, I'm Nicholas, a Linux Admin based in London. I graduated from the University
 of Swansea with a First in Theoretical Physics, but chose to pursue my love for

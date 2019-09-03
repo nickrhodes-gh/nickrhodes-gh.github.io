@@ -13,7 +13,7 @@ visual git revision graph respectively.
 
 ### Ranger
 
-![Ranger screenshot]({{ site.url }}/assets/images/ranger.jpg)
+![Ranger screenshot](/assets/images/ranger.jpg)
 
 Ranger is a text based file manager which uses Vim based keybindings to
 navigate the file system. Initially it isn't as quick as moving using `cd
@@ -24,7 +24,7 @@ for those occasions when it can't work it out it will prompt you for input.
 
 ### Tig
 
-![Tig screenshot]({{ site.url }}/assets/images/tig.jpg)
+![Tig screenshot](/assets/images/tig.jpg)
 
 I've been struggling to find a nice Git revision GUI for Linux for a little
 while. There are several out there but they either have a Java dependency, or

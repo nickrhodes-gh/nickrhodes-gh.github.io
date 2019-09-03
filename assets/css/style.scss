@@ -1,13 +1,22 @@
 ---
 ---
 
+$link-color: #2e6e9b;
+
 body {
     font-family: "Ubuntu";
     font-size: 16px;
 }
 a {
     text-decoration: none;
-    color: #2e6e9b;
+    color: $link-color;
+    &:hover {
+        color: scale-color($link-color, $lightness: -20%);
+        background-color: scale-color($link-color, $lightness: +80%);
+    }
+}
+@for $i from 1 through 5 {
+    h#{$i} {color: #2e6e9b};
 }
 .grid {
     display: grid;
@@ -51,8 +60,13 @@ a {
         text-align: center;
     }
 }
-.post:not(:first-child) {
-    margin-top: 50px;
+.post {
+    &:not(:first-child) {
+        margin-top: 50px;
+    }
+    img {
+        margin: 10px 0;
+    }
 }
 .post-date {
     font-size: 14px;
