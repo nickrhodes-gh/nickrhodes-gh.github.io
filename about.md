@@ -24,8 +24,6 @@ In my spare time I maintain open source projects
 [Configsnap](https://github.com/rackerlabs/configsnap). I also enjoy road
 cycling and rock climbing.
 
-### Get in touch!
-
 Find me on [LinkedIn][linkedin] / [Github][github].
 
 [rackspace]: https://www.rackspace.co.uk
