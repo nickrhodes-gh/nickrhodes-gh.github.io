@@ -1,28 +1,28 @@
 ---
 layout: post
 title: >
-    Part 1: Setting up AWS CodeBuild to build a Jekyll site
+    Part 1: Setting up AWS CodeBuild to publish a Jekyll site
 description: >
     Part 1 takes a look at the process to setup the AWS CodeDeploy build phase
     used to build and deploy this site.
 ---
 
-I recently decided to migrate my site from Github pages to AWS. To ensure it
-remained hassle free on the deployment side, I decided to replicate the
-deployment process that Github were already implementing.
+I recently decided to migrate my site from Github pages to AWS. To keep the
+deployment process fairly familiar I decided to imitate the process that is
+already used by GitHub.
 
 ```
 Code change > git commit + push > Jekyll build > deploy to webserver
 ```
 
-I've split the post into two parts, mostly to make it easier for me to write.
-Part 1 will look at the build phase, then part 2 will look at the deployment
+This post is split into two parts to make it easier to write.
+Part 1 will look at the build process/setup, and part 2 will look at the deployment
 phase.
 
 ## CodeCommit
-AWS will happily use Github's OAuth authentication to install repo hooks to
-receive push notifications; however to keep things solely within the AWS
-ecosystem I decided to host in [AWS CodeCommit][codecommit].
+AWS is capable of using Github's OAuth authentication to install repo hooks for
+push notifications; however to keep things solely within the AWS ecosystem I
+decided to host the code in [AWS CodeCommit][codecommit].
 
 [codecommit]: https://aws.amazon.com/codecommit/
 
